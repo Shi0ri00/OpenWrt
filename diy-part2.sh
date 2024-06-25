@@ -13,6 +13,9 @@
 echo "开始 DIY2 配置……"
 echo "========================="
 
+# TTYD 免登录
+sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
+
 function merge_package(){
     repo=`echo $1 | rev | cut -d'/' -f 1 | rev`
     pkg=`echo $2 | rev | cut -d'/' -f 1 | rev`
@@ -63,7 +66,7 @@ sed -i 's/DEPENDS:=@(.*/DEPENDS:=@(TARGET_bcm27xx||TARGET_bcm53xx||TARGET_ipq40x
 #cp -rf $GITHUB_WORKSPACE/PATCH/new/script/cputemp.sh ./package/base-files/files/bin/cputemp.sh
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.0.0.2/g' package/base-files/files/bin/config_generate
 
 #添加额外软件包
 #git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic package/luci-app-unblockneteasemusic
@@ -1074,8 +1077,8 @@ cp -rf $GITHUB_WORKSPACE/general/xfsprogs feeds/packages/utils
 cp -rf $GITHUB_WORKSPACE/general/shadowsocks-rust package/shadowsocks-rust
 
 # 晶晨宝盒
-sed -i "s|https.*/amlogic-s9xxx-openwrt|https://github.com/breakings/OpenWrt|g" package/custom/luci-app-amlogic/luci-app-amlogic/root/etc/config/amlogic
-sed -i "s|http.*/library|https://github.com/breakings/OpenWrt|g" package/custom/luci-app-amlogic/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|https.*/amlogic-s9xxx-openwrt|https://github.com/Shi0ri00/OpenWrt|g" package/custom/luci-app-amlogic/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|http.*/library|https://github.com/Shi0ri00/OpenWrt|g" package/custom/luci-app-amlogic/luci-app-amlogic/root/etc/config/amlogic
 sed -i "s|s9xxx_lede|ARMv8|g" package/custom/luci-app-amlogic/luci-app-amlogic/root/etc/config/amlogic
 #sed -i "s|.img.gz|..OPENWRT_SUFFIX|g" package/custom/luci-app-amlogic/luci-app-amlogic/root/etc/config/amlogic
 
