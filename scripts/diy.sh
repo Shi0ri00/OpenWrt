@@ -158,7 +158,7 @@ merge_package https://github.com/rufengsuixing/luci-app-adguardhome luci-app-adg
 merge_package https://github.com/Lienol/openwrt-package openwrt-package/luci-app-filebrowser
 merge_package https://github.com/Lienol/openwrt-package openwrt-package/luci-app-ssr-mudb-server
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/luci-app-speederv2
-merge_packagehttps://github.com/lxiaya/openwrt-homeproxy openwrt-homeproxy
+merge_package https://github.com/lxiaya/openwrt-homeproxy openwrt-homeproxy
 
 #添加smartdns
 #svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/smartdns package/smartdns
