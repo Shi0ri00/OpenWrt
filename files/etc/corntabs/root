@@ -1,0 +1,4 @@
+0 0 * * 1 /usr/share/openclash/openclash_ipdb.sh
+0 0 * * 1 /usr/share/openclash/openclash_geosite.sh
+0 0 * * 1 /usr/share/openclash/openclash_geoip.sh
+0 0 * * 1 /mnt/sda/aria2/tracker.sh

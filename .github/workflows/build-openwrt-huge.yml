@@ -274,7 +274,7 @@ jobs:
         KERNEL_VERSION_NAME: 6.1.86_6.6.27
         #OPENWRT_VER: R23.5.1
         KERNEL_AUTO_LATEST: true
-        GZIP_IMGS: .gz
+        GZIP_IMGS: .xz
         R_TOKEN: ${{ secrets.R_TOKEN }}
         DISTRIB_REVISION: R${{ env.DATE1 }} by Shiori
 
